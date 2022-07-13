@@ -1,6 +1,7 @@
 package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
+import static java.lang.Math.*;
 
 @Service
 public class QueryProcessor {
@@ -34,8 +35,22 @@ public class QueryProcessor {
         } else if (query.contains("multiplied")) {
             String[] words = query.split(" ");
             return String.valueOf(Integer.parseInt(words[3]) * Integer.parseInt(words[6]));
-        } else if (true) {
-            return "";
+        } else if (query.contains("cube")) {
+            String[] words = query.replaceAll(",", "").split(" ");
+            boolean record = false;
+            int largest = 1;
+            for (int i = 0; i < words.length; i++) {
+                if (record) {
+                    int num = Integer.parseInt(words[i])
+                    if (Math.sqrt(num) == Math.round(Math.sqrt(num)) && Math.cbrt(num) == Math.round(Math.cbrt(num))) {
+                        largest = num;
+                    }
+                }
+                if (words[i].equals("cube:")) {
+                    record = true;
+                }
+            }
+            return String.valueOf(largest);
         } else if (true) {
             return "";
         } else if (true) {
