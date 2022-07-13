@@ -41,7 +41,7 @@ public class QueryProcessor {
             int largest = 1;
             for (int i = 0; i < words.length; i++) {
                 if (record) {
-                    int num = Integer.parseInt(words[i])
+                    int num = Integer.parseInt(words[i]);
                     if (Math.sqrt(num) == Math.round(Math.sqrt(num)) && Math.cbrt(num) == Math.round(Math.cbrt(num))) {
                         largest = num;
                     }
