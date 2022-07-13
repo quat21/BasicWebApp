@@ -31,8 +31,9 @@ public class QueryProcessor {
         }  else if (query.contains("plus")) {
             String[] words = query.split(" ");
             return String.valueOf(Integer.parseInt(words[3]) + Integer.parseInt(words[5]));
-        } else if (true) {
-            return "";
+        } else if (query.contains("multiplied")) {
+            String[] words = query.split(" ");
+            return String.valueOf(Integer.parseInt(words[3]) * Integer.parseInt(words[6]));
         } else if (true) {
             return "";
         } else if (true) {
