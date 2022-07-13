@@ -51,10 +51,10 @@ public class QueryProcessor {
                 }
             }
             return String.valueOf(largest);
-        } else if (true) {
-            return "";
-        } else if (true) {
-            return "";
+        } else if (query.contains("banana")) {
+            return "yellow";
+        } else if (query.contains("james bond")) {
+            return "Sean Connery";
         } else if (true) {
             return "";
         } else {
