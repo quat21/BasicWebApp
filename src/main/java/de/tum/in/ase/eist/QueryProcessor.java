@@ -1,6 +1,10 @@
 package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.Math.*;
 
 @Service
@@ -55,10 +59,32 @@ public class QueryProcessor {
             return "yellow";
         } else if (query.contains("james bond")) {
             return "Sean Connery";
-        } else if (true) {
-            return "";
+        } else if (query.contains("primes")) {
+            String[] words = query.replaceAll(",", "").split(" ");
+            boolean record = false;
+            List<Integer> primes = new ArrayList<>();
+            for (int i = 0; i < words.length; i++) {
+                if (record) {
+                    if (isPrime(Integer.parseInt(words[i]))) {
+                        primes.add(Integer.parseInt(words[i]));
+                    }
+                }
+                if (words[i].equals("primes:")) {
+                    record = true;
+                }
+            }
+            return primes.toString();
         } else {
             return "";
         }
+    }
+
+    private boolean isPrime(int num) {
+        for (int i = 2; i < num / 2; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
