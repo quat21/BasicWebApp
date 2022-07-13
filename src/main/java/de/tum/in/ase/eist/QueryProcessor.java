@@ -28,8 +28,9 @@ public class QueryProcessor {
                 }
             }
             return String.valueOf(largest);
-        }  else if (true) {
-            return "";
+        }  else if (query.contains("plus")) {
+            String[] words = query.split(" ");
+            return String.valueOf(Integer.parseInt(words[2]) + Integer.parseInt(words[4]));
         } else if (true) {
             return "";
         } else if (true) {
