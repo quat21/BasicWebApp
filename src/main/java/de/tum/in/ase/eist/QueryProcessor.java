@@ -19,8 +19,8 @@ public class QueryProcessor {
             int largest = -1;
             for (int i = 0; i < words.length; i++) {
                 if (record) {
-                    if (Integer.parseInt(word) > largest) {
-                        largest = Integer.parseInt(word);
+                    if (Integer.parseInt(words[i]) > largest) {
+                        largest = Integer.parseInt(words[i]);
                     }
                 }
                 if (words[i].equals("largest:")) {
